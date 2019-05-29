@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Maps</title>
+</head>
+
+<body>
+    <div class="container">
+        <button class="show-markers">Show Markers</button>
+        <button class="hide-markers">Hide Markers</button>
+        <button class="toggle-draw">Draw</button>
+        <input type="text" class="address-input" placeholder="Enter Address">
+        <button class="zoom">Zoom</button>
+        <div>
+            <span class="text"> Within </span>
+            <select id="max-duration">
+                <option value="10">10 min</option>
+                <option value="15">15 min</option>
+                <option value="30">30 min</option>
+                <option value="60">1 hour</option>
+            </select>
+            <select id="mode">
+                <option value="DRIVING">drive</option>
+                <option value="WALKING">walk</option>
+                <option value="BICYCLING">bike</option>
+                <option value="TRANSIT">transit ride</option>
+            </select>
+            <span class="text">of</span>
+            <input id="search-within-time-text" type="text" placeholder="Ex: Google Office NYC or 75 9th Ave, New York, NY">
+            <input class="search" type="button" value="Go">
+        </div>
+        <div>
+            <span class="text">Search for nearby places</span>
+            <input id="places-search" type="text" placeholder="Ex: Pizza delivery in NYC">
+            <input id="go-places" type="button" value="Go">
+        </div>
+    </div>
+    <div class="map-container"></div>
+    <script src="app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuqhcnldSASlaMVsvLvMc8DRewy0FzX4o&libraries=places,drawing,geometry&v=3&callback=initMap"></script>
+</body>
+
+</html>
